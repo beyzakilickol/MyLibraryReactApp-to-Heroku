@@ -1,6 +1,6 @@
 const initialState = {
   isAuthenticated : true,
-  url : "http://localhost:3050/api/getBooks/allbooks"
+  url : "/api/getBooks/allbooks"
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
  }
 } else if(action.type == "GENRE"){
  return {  ...state,
-   url: `http://localhost:3050/api/getBooks/${action.genre}`
+   url: `/api/getBooks/${action.genre}`
 
 }
 } else if(action.type == "SEARCHVALUE"){

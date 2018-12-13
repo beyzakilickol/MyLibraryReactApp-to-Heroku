@@ -15,7 +15,7 @@ class Search extends Component {
 
      }
   componentWillReceiveProps = (props) => { //bu fonksiyon global store daki degisiklikte get fired olur. Yeni degisikligi yakalamak icin kullanilir.
-    axios.get(`http://localhost:3050/getSearchBook/${props.searchInputValue}`)
+    axios.get(`/api/getSearchBook/${props.searchInputValue}`)
     .then((response) => {
       this.setState({
          books: response.data
@@ -25,7 +25,7 @@ class Search extends Component {
     })
   }
   componentDidMount = () => {
-    axios.get(`http://localhost:3050/getSearchBook/${this.props.searchInputValue}`)
+    axios.get(`/api/getSearchBook/${this.props.searchInputValue}`)
     .then((response) => {
       this.setState({
          books: response.data
@@ -33,7 +33,7 @@ class Search extends Component {
     })
   }
   deleteBook = (each) =>{
-    fetch('http://localhost:3050/delete-book/'+ each.id ,{
+    fetch('/api/delete-book/'+ each.id ,{
 method: 'delete'
 }).then((response) =>{
 let arr = this.state.books

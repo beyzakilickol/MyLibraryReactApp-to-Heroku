@@ -22,7 +22,7 @@ export class Register extends Component {
   }
   sendUserToServer= ()=>{
     let userInfo = this.state.user
-   axios.post('http://localhost:3050/register',{
+   axios.post('/api/register',{
      email : userInfo.email,
      password: userInfo.password
    }).then((response)=>{

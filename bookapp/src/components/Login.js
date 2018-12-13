@@ -28,7 +28,7 @@ class Login extends Component {
   }
   sendUserToServer= ()=>{
     let userInfo = this.state.user
-   axios.post('http://localhost:3050/login',{
+   axios.post('/api/login',{
      email : userInfo.email,
      password: userInfo.password
    }).then((response)=>{

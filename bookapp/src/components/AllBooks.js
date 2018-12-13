@@ -52,7 +52,7 @@ class AllBooks extends Component {
          }
 
         deleteBook = (each) =>{
-          fetch('http://localhost:3050/delete-book/'+ each.id ,{
+          fetch('/api/delete-book/'+ each.id ,{
     method: 'delete'
   }).then((response) =>{
     let arr = this.state.books

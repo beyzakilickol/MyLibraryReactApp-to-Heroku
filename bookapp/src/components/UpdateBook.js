@@ -22,7 +22,7 @@ export class UpdateBook extends Component {
     let bookId = this.props.match.params.bookId
 
 
-    axios('http://localhost:3050/api/getBooks').then((response)=>{
+    axios('/api/getBooks').then((response)=>{
       let bookToUpdate= response.data.find((book)=>{
         return book.id == bookId
 
@@ -50,7 +50,7 @@ export class UpdateBook extends Component {
 
   }
 sendUpdateReq=() =>{
-  fetch('http://localhost:3050/updateBook/' + this.state.books.id,{
+  fetch('/api/updateBook/' + this.state.books.id,{
 method: 'POST',
 headers: {
   'Content-Type': 'application/json'

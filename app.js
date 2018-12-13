@@ -84,7 +84,7 @@ function authenticate(req,res,next) {
 
 }
 //----------------------------------------
-app.get('/getSearchBook/:bookTitle',function(req,res){
+app.get('/api/getSearchBook/:bookTitle',function(req,res){
    let searchedbooktitle = req.params.bookTitle
    db.any('SELECT id,booktitle,publisheddate,imageurl,category,author FROM books WHERE userid = $1',[userId]).then(function(response){
      console.log(response)
@@ -101,7 +101,7 @@ app.get('/getSearchBook/:bookTitle',function(req,res){
 })
 
 
-app.post('/addBook',function(req,res){
+app.post('/api/addBook',function(req,res){
   let title = req.body.title
   let author= req.body.author
   let category =req.body.category
@@ -139,7 +139,7 @@ app.get('/api/getBooks/:genre',authenticate,function(req,res){
 }
 })
 
-app.delete('/delete-book/:id',function(req,res){
+app.delete('/api/delete-book/:id',function(req,res){
   let bookId = req.params.id
 
 db.none('DELETE from books WHERE id=$1',[bookId]).then(function(){
@@ -147,7 +147,7 @@ db.none('DELETE from books WHERE id=$1',[bookId]).then(function(){
   res.json({success: true})
 })
 })
-app.post('/updateBook/:id',function(req,res){
+app.post('/api/updateBook/:id',function(req,res){
   let id = req.params.id
   let title = req.body.title
   let author = req.body.author
@@ -159,7 +159,7 @@ db.none('UPDATE books SET booktitle=$1,author=$2,publisheddate=$3,imageurl=$4,ca
   res.json({success:true})
 })
 })
-app.post('/register',function(req,res){
+app.post('/api/register',function(req,res){
   let email = req.body.email
   let password = req.body.password
 db.one('SELECT id,email,password FROM users WHERE email = $1',[email]).then((user)=>{
@@ -183,7 +183,7 @@ if(error.received == 0){
 })
 
 })
-app.post('/login',function(req,res){
+app.post('/api/login',function(req,res){
   let email = req.body.email
   let password = req.body.password
 

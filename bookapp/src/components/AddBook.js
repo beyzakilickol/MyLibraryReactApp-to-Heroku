@@ -24,7 +24,7 @@ class AddBook extends Component {
 
       addButton = () =>{
         let bookInfo = this.state.book
-        fetch('http://localhost:3050/addBook',{
+        fetch('/api/addBook',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
