@@ -35,18 +35,19 @@ class BaseLayout extends Component {
      console.log(props)
 
    }
-
-
+   static propTypes = {
+     children: PropTypes.node
+   }
   render() {
 
-
+const { children } = this.props
    //let headerStyle = this.props.isAuthenticated ? showHeaderStyle : hideHeaderStyle
 
     return (
 
       <div className="mainContainer">
           <Header />
-              {this.props.children}
+              {children}
           <Footer/>
 
       </div>
