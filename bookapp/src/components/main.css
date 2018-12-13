@@ -1,0 +1,136 @@
+body{
+  height:100%;
+  position: relative;
+  padding:0;
+  margin:0;
+}
+.mainContainer{
+  min-height:100%;
+  /* position: relative; */
+}
+.card h3 {
+  font-size:25px;
+  text-overflow:ellipsis;
+
+  white-space:nowrap;
+  overflow:hidden;
+
+}
+.card img{
+  height:350px;
+}
+.card-text{
+  margin-bottom: 10px !important;
+  font-size:20px;
+  text-overflow:ellipsis;
+
+  white-space:nowrap;
+  overflow:hidden;
+}
+.containerfooter{
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left:0;
+  right:0;
+  text-align: center;
+  background-color:rgb(38, 51, 64);
+  color:white;
+}
+.category{
+margin-left: 20px;
+}
+.navbar{
+  justify-content: flex-start !important;
+}
+.navbar a{
+  color:white !important;
+}
+.form-inline{
+margin-right: 2px;
+}
+.addBookTitle{
+  text-align: center;
+}
+.addBookContainer input,select{
+  margin-top: 10px;
+
+}
+.message{
+  color:red;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.greetingContainer{
+  color:white;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Comfortaa', cursive !important;
+}
+.addBookContainer{
+    margin-left:20px;
+}
+.login100-pic{
+  margin-bottom: 100px;
+}
+.card{
+  width: 350px;
+  height:fit-content;
+  transform: scale(0.6);
+  margin-top:-200px !important;
+  position:relative;
+}
+.maindiv{
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right:20px;
+  margin-top:100px;
+  position:relative;
+
+}
+
+.card-text{
+  /* text-align: center !important; */
+}
+.btn-div{
+  display:flex;
+  margin-top: 30px;
+  margin-bottom: 0px !important;
+  margin-left: 50px;
+
+
+}
+.buttons{
+  margin-right: 70px;
+  padding-top: 10px;
+}
+.addButton{
+  height:fit-content;
+  margin-top: 255px;
+
+
+
+}
+/* @media (max-width:580px){
+  .addButton{
+    bottom:0;
+  }
+} */
+.car-title{
+  text-align: center;
+  font-size: 20px;
+}
+.card-img-top{
+  height:50%;
+}
+@media screen and (max-width:840px){
+  .mainContainer{
+
+  }
+}
