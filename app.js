@@ -39,11 +39,17 @@ app.listen(PORT, function(){
 //----------------------------------------
 const path = require('path')
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'bookapp/build')))
-// Anything that doesn't match the above, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/bookapp/build/index.html'))
-})
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('bookapp/build'));
+}
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'bookapp/build', 'index.html'));
+});
+// app.use(express.static(path.join(__dirname, 'bookapp/build')))
+// // Anything that doesn't match the above, send back index.html
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/bookapp/build/index.html'))
+// })
 //--------middleware------------------
 function authenticate(req,res,next) {
 
