@@ -124,7 +124,9 @@ app.get('/api/getbooks',function(req,res){
 })
 app.get('/api/getBooks/:genre',authenticate,function(req,res){
   let genre = req.params.genre
+  console.log(genre)
   if(genre == "allbooks"){
+    console.log(genre + "inside condition")
   db.any('SELECT id,booktitle,publisheddate,imageurl,category,author FROM books WHERE userid = $1',[userId]).then(function(response){
       res.json(response)
 
