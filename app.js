@@ -42,9 +42,9 @@ const path = require('path')
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('bookapp/build'));
 }
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'bookapp/build', 'index.html'));
-});
+// app.get('*', (request, response) => {
+// 	response.sendFile(path.join(__dirname, 'bookapp/build', 'index.html'));
+// });
 // app.use(express.static(path.join(__dirname, 'bookapp/build')))
 // // Anything that doesn't match the above, send back index.html
 // app.get('*', (req, res) => {
